@@ -12,15 +12,16 @@ class Person {
   }
   
   speak(){
-      console.log(`Hello my name is ${this.name}, I am from ${this.location}`)}
-  }
+      console.log(`Hello my name is ${this.name}, I am from ${this.location}`)
+    }
 }
+
 
 
 // Instructor class
 class Instructor extends Person {
     constructor(insAttr){
-        super(insdAttrs);
+        super(insAttr);
         this.specialty=insAttr.specialty;
         this.favLanguage=insAttr.favLanguage;
         this.catchPhrase=insAttr.catchPhrase;
@@ -34,6 +35,21 @@ class Instructor extends Person {
         console.log(`${student.name} receives a perfect score on ${subject}`)}
 
 }
+
+const fred = new Instructor({
+    name: 'Fred',
+    location: 'Bedrock',
+    age: 37,
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
+  });
+
+  console.log(fred);
+  console.log(fred.grade({name:'azra'}, 'javascript'));
+
+
 
 // Student class
 
