@@ -28,11 +28,11 @@ class Instructor extends Person {
     }
 
     demo(subject){
-        console.log(`Today we are learning about ${subject}`)
+        console.log(`Today we are learning about ${subject}`);
     }
 
     grade(student, subject){
-        console.log(`${student.name} receives a perfect score on ${subject}`)}
+        console.log(`${student.name} receives a perfect score on ${subject}.`)};
 
 }
 
@@ -49,34 +49,46 @@ const fred = new Instructor({
   console.log(fred);
   console.log(fred.grade({name:'azra'}, 'javascript'));
 
-
-
 // Student class
 
 class Student extends Person{
     constructor(stuAttr){
-        super(stuAttrs);
+        super(stuAttr);
         this.previousBackground=stuAttr.previousBackground;
         this.className= stuAttr.className;
         this.favSubjects=stuAttr.favSubjects;
     }
-
     listSubjects(){
     //a method that logs out all of the student's favoriteSubjects one by one
         this.favSubjects.forEach( (ele) => {
             console.log(ele);
         })
     }
-
     PRAssignment(subject){
-        console.log(`${student.name} has submitted a PR for ${subject}`)
+        console.log(`${this.name} has submitted a PR for ${subject}`);
     }
-
     sprintChallenge(subject){
-        console.log(`${student.name} has begun spritn challenge on ${subject}`)
+        console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
-       
 }
+
+const wilma = new Student({
+    name: 'wilma',
+    location: 'Bedrock',
+    age: 37,
+    gender: 'female',
+    previousBackground: 'marketing',
+    className: 'web-19',
+    favSubjects: ['javascript', 'python']
+  });
+
+console.log(wilma);
+console.log(wilma.listSubjects());
+console.log(wilma.sprintChallenge('javascript'));
+console.log(wilma.PRAssignment('javascript'));
+  
+
+
 
 
 // Project Manager class:
@@ -88,10 +100,10 @@ class ProjectManagers extends Instructor {
         this.favInstructor=PMattr.favInstructor;
     }
     standUp(channel){
-        `${this.name} announces to ${channel}, @channel standy times!​​​​​`
+       return `${this.name} announces to ${channel}, @channel standy times!​​​​​`
     }
     debugsCode(student,subject){
-        `${this.name} debugs ${student.name}'s code on ${subject}`
+        return `${this.name} debugs ${student.name}'s code on ${subject}`
     }
 }
 
@@ -108,3 +120,18 @@ class Child extends Parent {
     }
 
     */
+
+   const rudy = new ProjectManagers({
+    name: 'rudy',
+    location: 'Bedrock',
+    age: 33,
+    gender: 'male',
+    favLanguage: 'html/css',
+    specialty: 'Frontend',
+    catchPhrase: "Ive seen your code, you're doing great.",
+    gradClassName: 'Web Dev',
+    favInstructor: "Josh Knell"
+  });
+console.log(rudy);
+console.log(rudy.standUp('javascript'));
+
