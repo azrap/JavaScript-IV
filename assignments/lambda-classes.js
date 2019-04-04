@@ -42,7 +42,9 @@ class Student extends Instructor{
 }
 
 
-// Project Manager class
+// Project Manager class:
+
+class ProjectManagers extends Instructor 
 
 /*
 class Child extends Parent {
