@@ -1,11 +1,29 @@
 // CODE here for your Lambda Classes
 
+
+// Person Class:
+
+class Person {
+    constructor(personAttr){
+    this.name = personAttr.name;
+    this.age = personAttr.age;
+    this.location = personAttr.location;
+    this.gender=personAttr.gender;
+  }
+  
+  speak(){
+      console.log(`Hello my name is ${this.name}, I am from ${this.location}`)}
+  }
+}
+
+
 // Instructor class
-class Instructor {
+class Instructor extends Person {
     constructor(insAttr){
-    this.specialty=insAttr.specialty;
-    this.favLanguage=insAttr.favLanguage;
-    this.catchPhrase=insAttr.catchPhrase;
+        super(insdAttrs);
+        this.specialty=insAttr.specialty;
+        this.favLanguage=insAttr.favLanguage;
+        this.catchPhrase=insAttr.catchPhrase;
     }
 
     demo(subject){
@@ -19,8 +37,9 @@ class Instructor {
 
 // Student class
 
-class Student extends Instructor{
+class Student extends Person{
     constructor(stuAttr){
+        super(stuAttrs);
         this.previousBackground=stuAttr.previousBackground;
         this.className= stuAttr.className;
         this.favSubjects=stuAttr.favSubjects;
@@ -32,9 +51,11 @@ class Student extends Instructor{
             console.log(ele);
         })
     }
+
     PRAssignment(subject){
         console.log(`${student.name} has submitted a PR for ${subject}`)
     }
+
     sprintChallenge(subject){
         console.log(`${student.name} has begun spritn challenge on ${subject}`)
     }
@@ -44,7 +65,19 @@ class Student extends Instructor{
 
 // Project Manager class:
 
-class ProjectManagers extends Instructor 
+class ProjectManagers extends Instructor {
+    constructor(PMattr){
+        super(PMattr);
+        this.gradClassName=PMattr.gradClassName;
+        this.favInstructor=PMattr.favInstructor;
+    }
+    standUp(channel){
+        `${this.name} announces to ${channel}, @channel standy times!​​​​​`
+    }
+    debugsCode(student,subject){
+        `${this.name} debugs ${student.name}'s code on ${subject}`
+    }
+}
 
 /*
 class Child extends Parent {
